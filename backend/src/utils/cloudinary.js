@@ -1,10 +1,11 @@
+require('dotenv').config();
 const cloudinary = require('cloudinary').v2;
 
 // Configure Cloudinary with debug logging
 cloudinary.config({
-   cloud_name: 'dievsyyik',
-   api_key: '588217726391773',
-   api_secret: 'i4wZ-yEDoSXQtXA4sv0tYbPIzEw'
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 console.log('🔹 Cloudinary Config:');
