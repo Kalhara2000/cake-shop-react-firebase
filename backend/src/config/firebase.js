@@ -16,8 +16,17 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Test connection
-const testConnection = () => {
-  console.log("✅ Firebase initialized");
+const testConnection = async () => {
+  try {
+    const testRef = doc(db, 'connections', 'test');
+    await setDoc(testRef, {
+      status: 'connected',
+      timestamp: serverTimestamp()
+    });
+    console.log('✅ Firebase Firestore connected successfully!');
+  } catch (error) {
+    console.error('❌ Firebase connection failed:', error.message);
+  }
 };
 
 

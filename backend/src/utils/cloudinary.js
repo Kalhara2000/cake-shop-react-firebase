@@ -55,39 +55,3 @@ const deleteFromCloudinary = async (publicId) => {
 };
 
 module.exports = { uploadToCloudinary, deleteFromCloudinary };
-
-
-// const cloudinary = require('cloudinary').v2;
-
-// cloudinary.config({
-//   cloud_name: 'dievsyyik',
-//   api_key: '588217726391773',
-//   api_secret: 'i4wZ-yEDoSXQtXA4sv0tYbPIzEw'
-// });
-
-// const uploadToCloudinary = async (fileBuffer) => {
-//   try {
-//     const b64 = Buffer.from(fileBuffer).toString('base64');
-//     const dataURI = `data:image/jpeg;base64,${b64}`;
-//     const result = await cloudinary.uploader.upload(dataURI, {
-//       folder: 'cakes',
-//       resource_type: 'auto'
-//     });
-//     return {
-//       url: result.secure_url,
-//       publicId: result.public_id
-//     };
-//   } catch (error) {
-//     throw error;
-//   }
-// };
-
-// const deleteFromCloudinary = async (publicId) => {
-//   try {
-//     await cloudinary.uploader.destroy(publicId);
-//   } catch (error) {
-//     throw error;
-//   }
-// };
-
-// module.exports = { uploadToCloudinary, deleteFromCloudinary };
