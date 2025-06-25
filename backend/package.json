@@ -1,15 +1,14 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Backend for The House of Cake - API built with Express and Firebase",
-  "main": "api/index.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node api/index.js",
-    "dev": "vercel dev",
-    "test": "echo \"No tests specified\" && exit 0"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["cake", "express", "firebase", "cloudinary", "api"],
-  "author": "Your Name",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {

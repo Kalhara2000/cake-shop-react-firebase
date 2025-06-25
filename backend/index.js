@@ -1,8 +1,8 @@
-require('dotenv').config();
+//require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const cakeRoutes = require('../src/routes/cakeRoutes');
-const { testConnection } = require('../src/config/firebase');
+const cakeRoutes = require('./src/routes/cakeRoutes');
+const { testConnection } = require('./src/config/firebase');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
