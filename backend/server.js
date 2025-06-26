@@ -1,4 +1,6 @@
-//require('dotenv').config();
+//server.js
+
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const cakeRoutes = require('./src/routes/cakeRoutes');
