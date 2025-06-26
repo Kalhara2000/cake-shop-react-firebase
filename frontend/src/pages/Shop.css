@@ -1,0 +1,72 @@
+/* ===== Shop Container ===== */
+.shop-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  /* ===== Title ===== */
+  .shop-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #8B4513;
+    position: relative;
+    font-family: 'Georgia', serif;
+  }
+  
+  .shop-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #e67e22;
+    border-radius: 2px;
+  }
+  
+  /* ===== Grid Layout for Cake Items ===== */
+  .cake-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ===== Responsive Adjustments ===== */
+  @media (max-width: 1024px) {
+    .shop-title {
+      font-size: 2.2rem;
+    }
+  
+    .cake-grid {
+      gap: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .shop-container {
+      padding: 0 15px;
+    }
+  
+    .shop-title {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .shop-title {
+      font-size: 1.8rem;
+    }
+  
+    .cake-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+  

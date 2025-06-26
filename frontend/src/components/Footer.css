@@ -1,0 +1,81 @@
+/* ====== Footer Component Styles ====== */
+
+.site-footer {
+    background-color: #4a2c2a; /* Deep brown */
+    color: #ffffff;
+    padding: 2rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .footer-branding h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  
+  .footer-branding p {
+    font-size: 1rem;
+    color: #f3e9e9;
+  }
+  
+  .footer-contact {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .footer-contact p {
+    margin: 0.3rem 0;
+  }
+  
+  .footer-contact a {
+    color: #facc15; /* Bright yellow */
+    text-decoration: none;
+  }
+  
+  .footer-contact a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-social {
+    margin: 1.5rem 0;
+  }
+  
+  .footer-social a {
+    color: #facc15;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .footer-social a:hover {
+    text-decoration: underline;
+    color: #fcd34d;
+  }
+  
+  .footer-copy {
+    font-size: 0.85rem;
+    color: #e0dcdc;
+    margin-top: 1rem;
+  }
+  
+  /* ====== Responsive Tweaks ====== */
+  @media (max-width: 640px) {
+    .footer-branding h2 {
+      font-size: 1.4rem;
+    }
+  
+    .footer-contact p,
+    .footer-social a,
+    .footer-copy {
+      font-size: 0.9rem;
+    }
+  }
+  
