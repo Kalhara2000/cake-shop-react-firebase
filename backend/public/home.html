@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Backend Status</title>
+</head>
+<body>
+  <h1>🎂 Cake Shop Backend Status</h1>
+
+  <p id="firebase-status">Checking Firebase connection...</p>
+  <p id="cloudinary-status">Checking Cloudinary connection...</p>
+
+  <script>
+    // Check Firebase connection
+    fetch('/api/status')
+      .then(res => res.json())
+      .then(data => {
+        const el = document.getElementById('firebase-status');
+        if (data.status === 'connected') {
+          el.textContent = '✅ Firebase is connected!';
+          el.style.color = 'green';
+        } else {
+          el.textContent = '❌ Firebase is not connected!';
+          el.style.color = 'red';
+        }
+      })
+      .catch(() => {
+        document.getElementById('firebase-status').textContent = '❌ Failed to fetch Firebase status';
+      });
+
+    // Check Cloudinary connection
+    fetch('/api/cloudinary-status')
+      .then(res => res.json())
+      .then(data => {
+        const el = document.getElementById('cloudinary-status');
+        if (data.status === 'connected') {
+          el.textContent = '✅ Cloudinary is connected!';
+          el.style.color = 'green';
+        } else {
+          el.textContent = '❌ Cloudinary is not connected!';
+          el.style.color = 'red';
+        }
+      })
+      .catch(() => {
+        document.getElementById('cloudinary-status').textContent = '❌ Failed to fetch Cloudinary status';
+      });
+  </script>
+</body>
+</html>

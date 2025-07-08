@@ -1,5 +1,3 @@
-//cakeRoutes.js
-
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
@@ -9,7 +7,7 @@ const cakeController = require('../controllers/cakeController');
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
-    fileSize: 5 * 1024 * 1024, // 5MB file size limit
+    fileSize: 4 * 1024 * 1024, // 4MB file size limit
     files: 1, // Allow only 1 file
     fields: 10, // Allow up to 10 non-file fields
     parts: 20 // Total parts (files + fields) limit
