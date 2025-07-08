@@ -6,7 +6,7 @@ import CakeTable from './components/CakeTable';
 import logo from './assets/logo.png';
 import './App.css';
 
-const API_BASE_URL = 'https://cake-shop-backendl.vercel.app/api/cakes';
+const API_BASE_URL = 'https://cake-shop-backend-v02.vercel.app/api/cakes';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState('view');

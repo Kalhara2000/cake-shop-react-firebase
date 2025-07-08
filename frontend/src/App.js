@@ -20,7 +20,7 @@ import logo from './assets/logo.png';
 
 
 
-const API_BASE_URL = 'https://cake-shop-backendl.vercel.app/api/cakes'; // Update if needed
+const API_BASE_URL = 'https://cake-shop-backend-v02.vercel.app/api/cakes'; // Update if needed
 
 const App = () => {
   const [cakes, setCakes] = useState([]);
