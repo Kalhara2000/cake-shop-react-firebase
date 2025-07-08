@@ -51,8 +51,7 @@ Customer Details:
       <div className="bg-white max-w-2xl mx-auto rounded-lg shadow-md p-4 sm:p-6 md:p-8">
         <div className="cake-flex">
           <div className="cake-image">
-            {/* <img src={cake.imageUrl} alt={cake.name} className="object-cover rounded-lg" /> */}
-            <img src={cake.image} alt={cake.name} className="object-cover rounded-lg" /> {/*✅ this must match prop name in CakeItem for dummy data*/}
+            <img src={cake.imageUrl} alt={cake.name} className="object-cover rounded-lg" />
           </div>
 
           <div className="cake-info">

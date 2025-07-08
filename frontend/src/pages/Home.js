@@ -28,8 +28,7 @@ const Home = ({ cakes }) => {
              <CakeItem
               id={cake.id}
               name={cake.name}
-              // imageUrl={cake.imageUrl}
-              imageUrl={cake.image} // ✅ this must match prop name in CakeItem for dummy data
+              imageUrl={cake.imageUrl}
               price={cake.price}
             />
           </Link>
