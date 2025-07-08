@@ -20,7 +20,7 @@ import logo from './assets/logo.png';
 
 
 
-const API_BASE_URL = 'http://localhost:5000/api/cakes'; // Update if needed
+const API_BASE_URL = 'https://cake-shop-backendl.vercel.app/api/cakes'; // Update if needed
 
 const App = () => {
   const [cakes, setCakes] = useState([]);
@@ -29,12 +29,12 @@ const App = () => {
 
 
     //Dummy cake data //////////////
-    const dummyCakes = [
-      { id: '1', name: 'Chocolate Cake', description: 'A rich, moist chocolate cake crafted with premium cocoa and layered with velvety chocolate ganache. Elegantly balanced in sweetness, this indulgent dessert delivers a deep, luxurious flavor in every bite — perfect for those who appreciate refined taste and timeless quality.', price: 6300.00, image: 'https://res.cloudinary.com/dievsyyik/image/upload/v1750776597/cakes/regopc6qb6rkvyjawpev.jpg' },
-      { id: '2', name: 'Butter Cream Cake', description: 'A rich, tender butter cake made with premium creamery butter, delivering a moist crumb and a warm, comforting flavor. Baked to golden perfection, this timeless favorite offers understated elegance in every slice — a true celebration of quality and simplicity.', price: 3300.00, image: 'https://res.cloudinary.com/dievsyyik/image/upload/v1750924800/cake2_ndwzrr.png' },
-      { id: '3', name: 'Vanilla Cake', description: 'A light and airy vanilla sponge, crafted from the finest Madagascar vanilla beans and enveloped in a smooth, velvety vanilla buttercream. This cake offers a delicate sweetness and a beautifully balanced flavor profile — refined, timeless, and perfect for elegant occasions.', price: 3000.00, image: 'https://res.cloudinary.com/dievsyyik/image/upload/v1750924800/cake3_gn6ad0.png' },
-      { id: '4', name: 'Vanilla & Butter Cake', description: 'Experience the perfect harmony of rich creamery butter and fragrant Madagascar vanilla in this elegant cake set. The centerpiece is a moist, golden butter-vanilla cake — delicately sweet, beautifully balanced, and baked to perfection. Accompanied by five artisanal cupcakes, each echoing the same exquisite flavor in a charming individual portion. Ideal for sharing or gifting, this set blends timeless taste with refined presentation.', price: 5200.00, image: 'https://res.cloudinary.com/dievsyyik/image/upload/v1750775110/cakes/vvk8t7q3nuxahwcv8gon.jpg' },
-    ];
+    // const dummyCakes = [
+    //   { id: '1', name: 'Chocolate Cake', description: 'A rich, moist chocolate cake crafted with premium cocoa and layered with velvety chocolate ganache. Elegantly balanced in sweetness, this indulgent dessert delivers a deep, luxurious flavor in every bite — perfect for those who appreciate refined taste and timeless quality.', price: 6300.00, imageUrl: 'https://res.cloudinary.com/dievsyyik/image/upload/v1750776597/cakes/regopc6qb6rkvyjawpev.jpg' },
+    //   { id: '2', name: 'Butter Cream Cake', description: 'A rich, tender butter cake made with premium creamery butter, delivering a moist crumb and a warm, comforting flavor. Baked to golden perfection, this timeless favorite offers understated elegance in every slice — a true celebration of quality and simplicity.', price: 3300.00, imageUrl: 'https://res.cloudinary.com/dievsyyik/image/upload/v1750924800/cake2_ndwzrr.png' },
+    //   { id: '3', name: 'Vanilla Cake', description: 'A light and airy vanilla sponge, crafted from the finest Madagascar vanilla beans and enveloped in a smooth, velvety vanilla buttercream. This cake offers a delicate sweetness and a beautifully balanced flavor profile — refined, timeless, and perfect for elegant occasions.', price: 3000.00, imageUrl: 'https://res.cloudinary.com/dievsyyik/image/upload/v1750924800/cake3_gn6ad0.png' },
+    //   { id: '4', name: 'Vanilla & Butter Cake', description: 'Experience the perfect harmony of rich creamery butter and fragrant Madagascar vanilla in this elegant cake set. The centerpiece is a moist, golden butter-vanilla cake — delicately sweet, beautifully balanced, and baked to perfection. Accompanied by five artisanal cupcakes, each echoing the same exquisite flavor in a charming individual portion. Ideal for sharing or gifting, this set blends timeless taste with refined presentation.', price: 5200.00, imageUrl: 'https://res.cloudinary.com/dievsyyik/image/upload/v1750775110/cakes/vvk8t7q3nuxahwcv8gon.jpg' },
+    // ];
     //////////////////////////////////
 
 
@@ -45,7 +45,7 @@ const App = () => {
         setCakes(res.data);
       } catch (err) {
         console.error('Error fetching cakes:', err);
-        setCakes(dummyCakes); //// Dummy cake date show
+        //setCakes(dummyCakes); //// Dummy cake date show
       }
     };
 
