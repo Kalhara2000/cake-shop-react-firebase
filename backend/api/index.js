@@ -1,4 +1,3 @@
-// index.js
 const express = require('express');
 const cors = require('cors');
 const serverless = require('serverless-http');
@@ -9,15 +8,13 @@ const cakeRoutes = require('../src/routes/cakeRoutes');
 const { testConnection } = require('../src/config/firebase');
 
 const app = express();
-
-// Middlewares
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); // 🧠 Required for multipart/form-data
 
-// Routes
+// 🎂 Cake routes
 app.use('/api/cakes', cakeRoutes);
 
+// ✅ Firebase connection test
 app.get('/api/status', async (req, res) => {
   try {
     await testConnection();
@@ -27,14 +24,24 @@ app.get('/api/status', async (req, res) => {
   }
 });
 
+// ✅ Cloudinary connection test
 app.get('/api/cloudinary-status', async (req, res) => {
   try {
     const config = cloudinary.config();
+
+    // Check if keys are present
     if (!config.cloud_name || !config.api_key || !config.api_secret) {
-      throw new Error('Missing Cloudinary config');
+      throw new Error('Missing Cloudinary configuration');
     }
+
+    // Try pinging Cloudinary API
     const ping = await cloudinary.api.ping();
-    res.json({ status: ping.status });
+    if (ping.status === 'ok') {
+      res.json({ status: 'connected' });
+    } else {
+      throw new Error('Cloudinary ping failed');
+    }
+
   } catch (err) {
     res.status(500).json({ status: 'not connected', error: err.message });
   }
