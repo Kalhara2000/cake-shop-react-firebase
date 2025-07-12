@@ -1,8 +1,9 @@
+/* Base table styling */
 .cake-table {
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
-  margin: 20px auto 0; /* Center the table */
+  margin: 20px auto 0;
   font-family: Arial, sans-serif;
 }
 
@@ -11,7 +12,7 @@
   border: 1px solid #8B4513;
   padding: 10px;
   text-align: left;
-  white-space: nowrap;
+  white-space: nowrap; /* keep nowrap by default */
 }
 
 .cake-table th {
@@ -19,47 +20,70 @@
   color: #F5F5DC;
 }
 
+/* Allow description cell to wrap */
+.cake-table td[data-label="Description"] {
+  white-space: normal;      /* allow wrapping */
+  word-break: break-word;   /* break long words */
+  max-width: 300px;         /* control max width */
+}
+
+/* Image column */
 .cake-table td img {
   max-width: 80px;
   height: auto;
   border-radius: 4px;
 }
 
+/* Buttons */
 .cake-table td button {
   background-color: #8B4513;
   color: #F5F5DC;
-  padding: 10px 10px;
-  margin-bottom: 10px;
-  width: 50%;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  width: 80px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   margin-right: 5px;
   transition: background-color 0.3s ease;
+  font-size: 14px;
 }
 
 .cake-table td button:hover {
   background-color: #6B2E0E;
 }
 
+/* Description toggle link */
+.cake-table td span {
+  color: #8B4513;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 13px;
+}
+
+/* Paragraphs (fallback) */
 p {
   text-align: center;
   color: #8B4513;
   padding: 20px;
 }
 
-/* Mobile view */
+/* ================================
+   Responsive Mobile Styles
+================================ */
 @media (max-width: 768px) {
   .cake-table {
     width: 100%;
     margin-top: 10px;
     overflow-x: auto;
+    display: block;
   }
 
   .cake-table thead {
-    display: none; /* Hide header on small screens */
+    display: none; /* Hide header on mobile */
   }
- 
+
   .cake-table tr {
     display: block;
     margin-bottom: 15px;
@@ -70,32 +94,43 @@ p {
   }
 
   .cake-table td {
-    display: flex;
-    align-items: center;
-    padding: 8px 0;
+    display: block;
     border: none;
-    white-space: normal;
+    padding: 8px 0;
+    white-space: normal;        /* allow wrapping on mobile */
     word-break: break-word;
   }
 
   .cake-table td::before {
     content: attr(data-label);
-    flex-basis: 40%;
+    display: block;
     font-weight: bold;
     color: #8B4513;
-    margin-right: 10px;
+    margin-bottom: 4px;
     text-transform: uppercase;
   }
 
   .cake-table td img {
-    max-width: 60px;
-    margin-right: 10px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 6px;
   }
 
   .cake-table td button {
-    width: 50%;
-    margin-right: 30px;
-    font-size: 12px;
+    width: 100%;
+    margin-bottom: 8px;
+    font-size: 14px;
     padding: 6px 10px;
+  }
+
+  .cake-table td span {
+    display: inline-block;
+    margin-top: 4px;
+  }
+
+  /* On mobile, allow description cell full width */
+  .cake-table td[data-label="Description"] {
+    max-width: 100%;
   }
 }
