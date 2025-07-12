@@ -1,5 +1,5 @@
 // App.js
-import React, { useState, useEffect, useCallback } from 'react';
+import React,{ useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import CakeForm from './components/CakeForm';
 import CakeTable from './components/CakeTable';
@@ -40,14 +40,9 @@ const App = () => {
     setLoading(true);
     try {
       const formData = new FormData();
-      for (let key in cakeData) {
-        if (key === 'image' && cakeData[key]) {
-          formData.append('image', cakeData[key], cakeData[key].name);
-        } else {
-          formData.append(key, cakeData[key]);
-        }
-      }
-
+      Object.entries(cakeData).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
 
       if (editingCake) {
         await axios.put(`${API_BASE_URL}/${editingCake.id}`, formData, {
