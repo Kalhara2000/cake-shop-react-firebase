@@ -50,22 +50,6 @@ button:hover:not(:disabled) {
   background-color: #6B2E0E;
 }
 
-/* Image preview styles */
-.image-preview img {
-  margin-top: 10px;
-  width: 150px;
-  border-radius: 4px;
-  object-fit: cover;
-  border: 1px solid #ccc;
-}
-
-/* Error message styles */
-.form-error {
-  color: red;
-  margin: 10px 0;
-  font-weight: bold;
-}
-
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
   .cake-form {

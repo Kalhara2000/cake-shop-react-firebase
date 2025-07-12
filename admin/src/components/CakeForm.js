@@ -9,55 +9,27 @@ const CakeForm = ({ onSubmit, loading, initialData }) => {
     image: null
   });
 
-  const [imagePreview, setImagePreview] = useState(null);
-  const [error, setError] = useState('');
-
   useEffect(() => {
     if (initialData) {
       setFormData({
         name: initialData.name || '',
         price: initialData.price || '',
         description: initialData.description || '',
-        image: null
+        image: null // new image to be uploaded
       });
-      setImagePreview(initialData.imageUrl || null);
     }
   }, [initialData]);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-
-    if (name === 'image' && files?.[0]) {
-      const file = files[0];
-
-      // ✅ Validate file type
-      const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
-      if (!allowedTypes.includes(file.type)) {
-        setError('Only JPEG, PNG, or WEBP images are allowed.');
-        return;
-      }
-
-      // ✅ Validate size (< 4MB)
-      if (file.size > 4 * 1024 * 1024) {
-        setError('Image must be smaller than 4MB.');
-        return;
-      }
-
-      setFormData(prev => ({ ...prev, image: file }));
-      setImagePreview(URL.createObjectURL(file));
-      setError('');
-    } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
-    }
+    setFormData(prev => ({
+      ...prev,
+      [name]: files ? files[0] : value
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.image && !initialData) {
-      setError('Image is required.');
-      return;
-    }
-    setError('');
     onSubmit({ ...formData, id: initialData?.id });
   };
 
@@ -78,6 +50,7 @@ const CakeForm = ({ onSubmit, loading, initialData }) => {
         <label>Price (Rs.)</label>
         <input
           type="number"
+          step="0.01"
           name="price"
           value={formData.price}
           onChange={handleChange}
@@ -104,14 +77,7 @@ const CakeForm = ({ onSubmit, loading, initialData }) => {
           onChange={handleChange}
           required={!initialData}
         />
-        {imagePreview && (
-          <div className="image-preview">
-            <img src={imagePreview} alt="Preview" />
-          </div>
-        )}
       </div>
-
-      {error && <div className="form-error">{error}</div>}
 
       <button type="submit" disabled={loading}>
         {loading ? 'Saving...' : initialData ? 'Update Cake' : 'Add Cake'}
