@@ -1,3 +1,4 @@
+//index.js
 const express = require('express');
 const cors = require('cors');
 const serverless = require('serverless-http');
@@ -8,7 +9,14 @@ const cakeRoutes = require('../src/routes/cakeRoutes');
 const { testConnection } = require('../src/config/firebase');
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: '*', // Or replace '*' with your frontend domain for more security
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type']
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 // 🎂 Cake routes
