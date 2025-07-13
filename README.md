@@ -1,6 +1,6 @@
 <h1>🍰 Cake Shop - React + Firebase + Node.js</h1>
   <p>A full-stack cake ordering web application with customer UI, admin panel, backend API, and Firebase + Cloudinary integration.</p>
-
+  <p>🔗 Live Website:<a href="https://cake-shop-frontend.vercel.app"> https://cake-shop-frontend.vercel.app</a></p>
   <hr />
 
   <h2>📁 Folder Structure</h2>
@@ -52,7 +52,7 @@ npm start
     <li><strong>Backend:</strong> Node.js + Express</li>
     <li><strong>Database:</strong> Firebase Firestore</li>
     <li><strong>Image Storage:</strong> Cloudinary</li>
-    <li><strong>Deployment:</strong> Firebase Hosting or Vercel (recommended)</li>
+    <li><strong>Deployment:</strong> Vercel</li>
   </ul>
 
   <h2>☁️ Cloudinary Image Upload</h2>
@@ -68,7 +68,6 @@ npm start
 
   <h3>✅ Customer Side</h3>
   <ul>
-    <li>View cakes</li>
     <li>View cake details</li>
     <li>Order via WhatsApp (with quantity, special notes, delivery info)</li>
   </ul>
@@ -77,16 +76,24 @@ npm start
   <ul>
     <li>Add / Edit / Delete cakes</li>
     <li>Upload images to Cloudinary</li>
-    <li>Optional: Manage orders</li>
   </ul>
 
   <h2>📝 WhatsApp Order</h2>
   <p>The system auto-generates a WhatsApp message from form data with cake details.</p>
 
-  <h2>🧑‍💻 Author</h2>
-  <p><strong>Thamindu Kalhara</strong><br/>
-  📍 Southeast University of Sri Lanka<br/>
-  🏆 Hackathon 2nd Place Winner – SEUSL</p>
+  <h2>📸 Screenshots</h2>
+  <p>
+    <img width="1910" height="1072" alt="Screenshot 2025-07-13 130447" src="https://github.com/user-attachments/assets/b556530c-279c-49ac-8d7f-ef7214a1a546" />
+    <img width="1915" height="1074" alt="Screenshot 2025-07-13 130546" src="https://github.com/user-attachments/assets/325210ca-9d52-4935-820c-b2fefd2c005b" />
+    <img width="1911" height="1079" alt="Screenshot 2025-07-13 130530" src="https://github.com/user-attachments/assets/a001c164-62d2-4da0-a3e0-cc9f0badfab8" />
+    <img width="1899" height="1077" alt="Screenshot 2025-07-13 130521" src="https://github.com/user-attachments/assets/8bb93f53-8b86-4bad-84b8-c1e4e7c0077a" />    
+  </p>
+ 
+ <h2>🧑‍💻 Author</h2>
+ <p><strong>Thamindu Kalhara</strong><br/>
+📧 <a href="mailto:20.kalhara@gmail.com">20.kalhara@gmail.com</a><br/>
+🌐 <a href="https://github.com/Kalhara2000">GitHub</a> | <a href="https://www.linkedin.com/in/ktdt-kalhara">LinkedIn</a>
+</p>
 
   <h2>📃 License</h2>
   <p>This project is <strong>open-source</strong> and free to use. Attribution appreciated. 🌟</p>
